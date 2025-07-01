@@ -55,3 +55,54 @@ void stampa(lista l1, lista l2){
         l2 = tail(l2); 
     }
 }
+
+int* tris(lista mano){
+    int* v = new int[12]; 
+    int i; 
+    lista l = mano; 
+    
+    for(i=0; i<12; i++){
+        v[i] = 0; 
+    }
+
+    while(l!=NULL){
+        v[l->inf.valore - 1] = v[l->inf.valore - 1] + 1;
+        l = tail(l); 
+    }
+
+    for(i=0; i<12; i++){
+        v[i] = v[i] / 3;
+    }
+
+    return v;
+}
+
+/*int* tris(lista carte)
+{
+    int* array = new int[12]; 
+    elem* scorri = carte;
+    for(int j = 0; j < 12; j++)
+    {
+        array[j] = 0;
+    }
+    int k = 0;
+    while(scorri!=NULL && k < 12)
+    {
+        //cout<<"dove sono: "<<scorri->inf.valore - 1<<endl;
+        if((scorri->inf.valore-1)>= 0 && (scorri->inf.valore-1)<12) //aggiungo una ricorrenza
+        {
+            array[scorri->inf.valore - 1] = array[scorri->inf.valore - 1] +1;
+        }
+        else
+        {
+            cout<< "sono uscito dai bordi"<<endl;
+        }
+        scorri = scorri->pun;
+        k = k+1;
+    }
+    for(int i = 0; i < 12; i++)
+    {
+        array[i] = array[i]/3; //numero tris.
+    }
+    return array;
+}*/

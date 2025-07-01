@@ -18,6 +18,12 @@ using namespace std;
 
 #include "tipo.h"
 
+/**
+ * @author {Sebastiano Toni, Matricola: 199678}
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int compare(tipo_inf a,tipo_inf b){
     if(a.valore < b.valore)
         return -1;
@@ -34,7 +40,11 @@ int compare(tipo_inf a,tipo_inf b){
     return 1;
 }
 
-
+/**
+ * @author {Sebastiano Toni, Matricola: 199678}
+ * @param dest 
+ * @param source 
+ */
 void copy(tipo_inf& dest, tipo_inf source){
     dest.seme = source.seme;
     dest.valore = source.valore;

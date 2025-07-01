@@ -23,6 +23,8 @@ int main()
 {
     FILE* fp; 
     int nc,i,val;
+    int* v1;
+    int* v2; 
     char s;
     lista mano1 = NULL;
     lista mano2 = NULL; 
@@ -47,6 +49,22 @@ int main()
     fclose(fp);
 
     stampa(mano1,mano2); 
+
+    cout << "\n\n";
+
+    v1= tris(mano1);
+
+    cout << "Tris mano 1: " << endl; 
+    for(int i=0; i<12; i++){
+        cout << v1[i] << " ";
+    }
+
+    v2 = tris(mano2);
+
+    cout << "\nTris mano 2: " << endl;
+    for(int i=0; i<12; i++){
+        cout << v2[i] << " ";
+    }
 
     return 0; 
 }
