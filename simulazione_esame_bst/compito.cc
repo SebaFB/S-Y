@@ -45,7 +45,7 @@ int main()
     stampa_bst(albero);
     cout<<"-------------------------------"<<endl;
     //punto 2.a:
-    cout<<"al porcodio"<<endl;
+    /*
     bnode* nodo = albero;
     cout<<"stelle di: "<<nodo->inf.nome<< " : "<< nodo->inf.stelle<<endl;
     bool cerca;
@@ -56,7 +56,11 @@ int main()
     cin>>cerca;
     cout<<endl;
     ricerca(albero, numero, cerca);
-    
+    */
+    //punto 2.b:
+    char l[] = "Firenze";
+    int ric_hotel = media(albero, 3,l);
+    cout<<"numero hotel: "<<ric_hotel <<endl;
 
     return 0;
 }

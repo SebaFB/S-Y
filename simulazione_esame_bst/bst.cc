@@ -224,3 +224,40 @@ void ricerca(bst albero, int stelle, bool cerca) //a sx valori > a destra valori
 		//caso base a dx: non faccio niente.
 	}
 }
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief dfs modificata che permette di contare il numero di elementi ricercati
+ * @param albero 
+ * @param soglia numero di stelle -1 necessarie come filtro.
+ * @param luogo luogo filtro per la ricerca
+ * @return int numero di elementi che corrisponde ai filtri
+ */
+
+int dfs_mod(bst albero, int soglia, char* luogo)
+{
+	if(albero!=NULL)
+	{
+		if((strcmp(albero->inf.luogo, luogo)== 0) && albero->key>soglia)
+		{
+			cout<<"segno: "<<albero->inf.nome<<endl;
+			return 1+ dfs_mod(albero->left, soglia, luogo) + dfs_mod(albero->right, soglia, luogo);
+		}
+		return  dfs_mod(albero->left, soglia, luogo) + dfs_mod(albero->right, soglia, luogo);
+	}
+	return 0;
+}
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief si avvale di una versione modificata della dfs per contare il numero di hotel che rispetta i requisiti
+ * @param albero 
+ * @param stelle  numero di stelle -1 necessarie come filtro.
+ * @param luogo luogo filtro per la ricerca
+ * @return int numero di elementi che corrisponde ai filtri
+ */
+
+int media (bst albero, int stelle, char* luogo)
+{
+	int numero = 0;
+	numero = dfs_mod(albero, stelle, luogo);
+	return numero;
+}

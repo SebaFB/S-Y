@@ -27,5 +27,8 @@ void stampa_bst(bst);
 
 void ricerca(bst, int, bool);
 
+int dfs_mod(bst, int, char*);
+
+int media(bst, int, char*);
 
 
