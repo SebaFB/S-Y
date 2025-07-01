@@ -105,3 +105,57 @@ int* tris(lista carte)
     }
     return array;
 }
+
+
+
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief funzione che cerca un tris da calare sul tavolo, stampa il tris trovato e aggiorna la lista delle carte del giocatore eliminandolo
+ * @param carte lista doppia che contiene le carte del giocatore
+ * @return int che rappresenta il punteggio del tris appena eliminato.
+ */
+int cala(lista& carte)
+{
+    int* terz = tris(carte);
+    bool esiste = false; // esiste un tris;
+    int a = -1;
+    while( a < 12 && esiste == false)
+    {
+        a++;
+        if(terz[a]>0)
+        {
+            esiste = true;
+        }
+    }
+    if(esiste == false)
+    {
+        return 0;
+    }
+    else
+    {
+       cout<<"tris di "<< a+1<<endl;
+       elem* tmp = carte;
+       int contatore = 0;
+       elem* pross = NULL;
+       while(tmp!=NULL && contatore < 3)
+       {
+            cout<< "sono a "<<tmp->inf.valore <<" con seme: " << tmp->inf.seme<<endl;
+            if(tmp->inf.valore == (a+1))
+            {
+                cout<<"rimuovo la seguente carta: "<<tmp->inf.valore<< " seme: "<<tmp->inf.seme<<endl;
+                pross = tmp->pun;
+                carte = delete_elem(carte, tmp);
+                contatore = contatore+1;
+                tmp = pross;
+            }
+            else
+            {
+                tmp = tmp->pun;
+            }
+       }
+       //calcolo punteggio:
+       int punteggio = (a+1)*3; //a+1 valore
+       delete(terz);
+       return punteggio;
+    }
+}

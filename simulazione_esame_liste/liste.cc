@@ -56,6 +56,8 @@ lista insert_elem(lista l, elem* e){
 	return e;
 }
 
+
+
 lista delete_elem(lista l, elem* e){
 
 		if(l==e)

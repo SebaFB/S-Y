@@ -21,3 +21,5 @@ void print_mano(lista);
 void stampa(lista, lista);
 
 int* tris(lista);
+
+int cala(lista&);
