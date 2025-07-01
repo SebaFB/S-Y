@@ -33,31 +33,26 @@ int main()
     fclose(file2);
     stampa(mano1,mano2);
 
-    //punto 2.a:
-    int* array1 = NULL;
+    //2.b
+    pesca(mano1,2,'Q');
+    pesca(mano2,7,'C');
+    int punteggio1 = 0;
+    int punteggio2 = 0;
     
-    array1 = tris(mano1);
-    
-    for(int j = 0; j < 12; j++)
+    for(int m = 0; m < 3; m++)
     {
-        cout<<array1[j]<<endl;
+        //cout<<"punteggio parziale 1"<< punteggio1<<endl;
+        punteggio1 = punteggio1 + cala(mano1);
     }
-    
-    delete[] array1; //per oggetti multipli, altrimenti : int* p = new int; delete p; ma per oggetti singoli
-    /*print_mano(mano1);
-    
-    print_mano(mano2);*/
-    cout<<"--------------------------------------"<<endl;
-    int* array2 = NULL;
-    array2 = tris(mano2);
-    
-    
-    for(int f = 0; f < 12; f++)
+    cout<<"PUNTEGGIO1: "<<punteggio1<<endl;
+    cout<<"-----------------------------"<<endl<<endl<<endl;
+    for(int m = 0; m < 4; m++)
     {
-        cout<<array2[f]<<endl;
+        //cout<<"punteggio parziale 2"<< punteggio2<<endl;
+        punteggio2 = punteggio2 + cala(mano2);
+        
     }
-
-    delete[] array2;
-    cout<<"--------------------------------------"<<endl;
+    cout<<"PUNTEGGIO2: "<<punteggio2<<endl;
+    
     return 0;
 }
