@@ -133,16 +133,16 @@ int cala(lista& carte)
     }
     else
     {
-       cout<<"tris di "<< a+1<<endl;
+       //cout<<"tris di "<< a+1<<endl;
        elem* tmp = carte;
        int contatore = 0;
        elem* pross = NULL;
        while(tmp!=NULL && contatore < 3)
        {
-            cout<< "sono a "<<tmp->inf.valore <<" con seme: " << tmp->inf.seme<<endl;
+            //cout<< "sono a "<<tmp->inf.valore <<" con seme: " << tmp->inf.seme<<endl;
             if(tmp->inf.valore == (a+1))
             {
-                cout<<"rimuovo la seguente carta: "<<tmp->inf.valore<< " seme: "<<tmp->inf.seme<<endl;
+                //cout<<"rimuovo la seguente carta: "<<tmp->inf.valore<< " seme: "<<tmp->inf.seme<<endl;
                 pross = tmp->pun;
                 carte = delete_elem(carte, tmp);
                 contatore = contatore+1;
@@ -157,5 +157,34 @@ int cala(lista& carte)
        int punteggio = (a+1)*3; //a+1 valore
        delete(terz);
        return punteggio;
+    }
+}
+
+void pesca_ordinato(lista& mano, int v, char s)
+{
+    if (v < 1 || v > 12) {
+        cout<< "[ERRORE] Valore non valido per una carta: " << v << endl;
+        return;
+    } 
+    elem* tmp = mano;
+    tipo_inf carta;
+    carta.seme = s;
+    carta.valore = v;
+    elem* nodo = new_elem(carta);
+    if(mano == NULL)
+    {
+        cout<<"mano vuota, inserisco con insert_elem"<<endl;
+        mano = insert_elem(mano, nodo);
+    }
+    else
+    {
+        while(tmp->pun != NULL)
+        {
+            tmp = tmp->pun;
+        }
+        //cout<<"inserisco "<<nodo->inf.seme << " "<<nodo->inf.valore<<" dentro a " <<tmp->inf.seme<<" " << tmp->inf.valore<<endl;
+        //tmp->pun = NULL;
+        tmp->pun = nodo;
+        nodo->prev = tmp;
     }
 }

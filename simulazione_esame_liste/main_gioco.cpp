@@ -18,7 +18,7 @@ int main()
     lista mano1 = NULL;
     while ((fscanf(file1, "%d %c", &val, &seme) == 2) && i < n_carte)
     {
-        pesca(mano1,val,seme);
+        pesca_ordinato(mano1,val,seme);
         i++;
     }
     fclose(file1);
@@ -27,15 +27,18 @@ int main()
     lista mano2 = NULL;
     while ((fscanf(file2, "%d %c", &val, &seme) == 2) && i < n_carte)
     {
-        pesca(mano2,val,seme);
+        pesca_ordinato(mano2,val,seme);
         i++;
     }
     fclose(file2);
-    stampa(mano1,mano2);
-
+    cout<<"stampa"<<endl;
+    //stampa(mano1,mano2);
+    print_mano(mano1);
+    cout<<"----------------------"<<endl<<endl;
+    print_mano(mano2);
     //2.b
-    pesca(mano1,2,'Q');
-    pesca(mano2,7,'C');
+    pesca_ordinato(mano1,2,'Q');
+    pesca_ordinato(mano2,7,'C');
     int punteggio1 = 0;
     int punteggio2 = 0;
     

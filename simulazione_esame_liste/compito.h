@@ -23,3 +23,5 @@ void stampa(lista, lista);
 int* tris(lista);
 
 int cala(lista&);
+
+void pesca_ordinato(lista&, int, char);
