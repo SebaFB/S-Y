@@ -12,18 +12,20 @@ using namespace std;
  */
 void pesca(lista& l, int v, char s)
 {
-    //creo la carta:
+    if (v < 1 || v > 12) {
+        cerr << "[ERRORE] Valore non valido per una carta: " << v << endl;
+        return;
+    }   
     tipo_inf carta;
     carta.seme = s;
     carta.valore = v;
-    //creo il nodo:
-    elem* node = new elem;
-    node = new_elem(carta);
-    //inserimento in testa:
+
+    // Rimuovi allocazione ridondante:
+    elem* node = new_elem(carta);
     l = insert_elem(l, node);
-    //print_mano(l);
 }
-/*
+
+
 void print_mano(lista l)
 {
     elem* tmp = l;
@@ -34,7 +36,7 @@ void print_mano(lista l)
         tmp = tmp->pun;
     }
 }
-*/
+
 /**
  * @author {Youssef Chiesi, Matricola}
  * 
@@ -65,4 +67,41 @@ void stampa(lista mano1, lista mano2)
         tmp1 = tmp1->pun;
         tmp2 = tmp2->pun;
     }
+}
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief conta nella lista carte il numero di tris distinti per valore. 
+ * @brief tris: tre carte con lo stesso valore (indipendentemente dal seme).
+ * @param carte 
+ * @return int* un vettore dinamico di dimensione 13
+ */
+
+int* tris(lista carte)
+{
+    int* array = new int[12]; ;
+    elem* scorri = carte;
+    for(int j = 0; j < 12; j++)
+    {
+        array[j] = 0;
+    }
+    int k = 0;
+    while(scorri!=NULL && k < 12)
+    {
+        //cout<<"dove sono: "<<scorri->inf.valore - 1<<endl;
+        if((scorri->inf.valore-1)>= 0 && (scorri->inf.valore-1)<12) //aggiungo una ricorrenza
+        {
+            array[scorri->inf.valore - 1] = array[scorri->inf.valore - 1] +1;
+        }
+        else
+        {
+            cout<< "sono uscito dai bordi"<<endl;
+        }
+        scorri = scorri->pun;
+        k = k+1;
+    }
+    for(int i = 0; i < 12; i++)
+    {
+        array[i] = array[i]/3; //numero tris.
+    }
+    return array;
 }
