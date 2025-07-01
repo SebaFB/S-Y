@@ -56,6 +56,12 @@ void stampa(lista l1, lista l2){
     }
 }
 
+/**
+ * @author {Sebastiano Toni, Matricola: 199678}
+ * Funzione per trovare i tris nella mano
+ * @param mano 
+ * @return int* 
+ */
 int* tris(lista mano){
     int* v = new int[12]; 
     int i; 
@@ -77,32 +83,51 @@ int* tris(lista mano){
     return v;
 }
 
-/*int* tris(lista carte)
+/**
+ * @author {Sebastiano Toni, Matricola: 199678}
+ * @brief Funzione per calcolare il punteggio di ogni mano, in base a quanti tris si hanno
+ * @param carte 
+ * @return int 
+ */
+int cala(lista& carte)
 {
-    int* array = new int[12]; 
-    elem* scorri = carte;
-    for(int j = 0; j < 12; j++)
+    int* terz = tris(carte);
+    bool esiste = false; // esiste un tris;
+    int a = -1;
+    while( a < 12 && esiste == false)
     {
-        array[j] = 0;
-    }
-    int k = 0;
-    while(scorri!=NULL && k < 12)
-    {
-        //cout<<"dove sono: "<<scorri->inf.valore - 1<<endl;
-        if((scorri->inf.valore-1)>= 0 && (scorri->inf.valore-1)<12) //aggiungo una ricorrenza
+        a++;
+        if(terz[a]>0)
         {
-            array[scorri->inf.valore - 1] = array[scorri->inf.valore - 1] +1;
+            esiste = true;
         }
-        else
-        {
-            cout<< "sono uscito dai bordi"<<endl;
-        }
-        scorri = scorri->pun;
-        k = k+1;
     }
-    for(int i = 0; i < 12; i++)
+    if(esiste == false)
     {
-        array[i] = array[i]/3; //numero tris.
+        return 0;
     }
-    return array;
-}*/
+    else
+    {
+       elem* tmp = carte;
+       int contatore = 0;
+       elem* pross = NULL;
+       while(tmp!=NULL && contatore < 3)
+       {
+            if(tmp->inf.valore == (a+1))
+            {
+                //cout <<tmp->inf.valore<< " "<<tmp->inf.seme;
+                pross = tmp->pun;
+                carte = delete_elem(carte, tmp);
+                contatore = contatore+1;
+                tmp = pross;
+            }
+            else
+            {
+                tmp = tmp->pun;
+            }
+       }
+       int punteggio = (a+1)*3; //a+1 valore
+       delete(terz);
+       return punteggio;
+    }
+}

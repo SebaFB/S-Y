@@ -22,7 +22,7 @@ using namespace std;
 int main()
 {
     FILE* fp; 
-    int nc,i,val;
+    int nc,i,val,punt;
     int* v1;
     int* v2; 
     char s;
@@ -66,5 +66,14 @@ int main()
         cout << v2[i] << " ";
     }
 
+    cout << "\n"; 
+
+    punt = cala(mano1);
+
+    cout << "Punteggio mano 1: " << punt << endl; 
+
+    punt = cala(mano2); 
+
+    cout << "Punteggio mano 2: " << punt;
     return 0; 
 }
