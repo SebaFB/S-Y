@@ -70,14 +70,18 @@ void bst_insert(bst& b, bnode* n){
 	    }
 }}
 
-bnode* bst_search(bst b,tipo_key k){
+bnode* bst_search(bst b,tipo_key k){ //bst al contrario : a sx i maggiori a dx i minori
 
 	    while (b != NULL) {
-	      if (compare_key(k,get_key(b))==0)
-	    	  return b;
-	      if (compare_key(k,get_key(b))<0) {
+	      if (compare_key(k,get_key(b))==0) {//(s,s1) -> return s1-s
+			  //cout<< endl<< "sono uguali: trovato"<< k << get_key(b)<< " "<<b->inf.nome<< endl;
+	    	  return b; 
+		  }
+	      if (compare_key(k,get_key(b))<0) {  //chiave albero < chiave da trovare
+			  //cout<<"vado a sx, b_key < key: "<<get_key(b)<<endl;
 		      b = get_left(b);
-	      } else {
+	      } else { //chiave albero > chiave da trovare
+			  //cout<<"vado a dx, b_key > key: "<<get_key(b)<<endl;
 		      b = get_right(b);
 	      }
 	    }
@@ -139,16 +143,84 @@ void bst_delete(bst& b, bnode* n){
 	  delete n;
 
 }
-
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief stampa in ordine decrescente i nodi nell'albero.
+ * @param albero 
+ */
 void stampa_bst(bst albero)
-{
+{	
+	cout<<endl;
 	if(albero->left != NULL)
 	{
-		stampa_bst(albero->left);
+		stampa_bst(albero->left); //sx i maggiori
 	}
-	cout<< "STELLE: "<<albero->key<<endl;
+	cout<<albero->inf.nome << " " << albero->inf.luogo << " " << albero->key; //valore mediano
+	if(albero->parent!=NULL)
+	{
+		cout<< " FIGLIO DI: "<< albero->parent->inf.nome <<endl;
+	}
+	cout<<endl;
 	if(albero->right != NULL)
 	{
-		stampa_bst(albero->right);
+		stampa_bst(albero->right); //dx i minori/uguali
+	}
+}
+
+
+/**
+ * @author {Youssef Chiesi, Matricola}
+ * @brief stampa gli hotel > o <= al numero di stelle inserito in base al parametro cerca.
+ * @param albero 
+ * @param stelle identificativo stelle per stampare.
+ * @param cerca se true stampa hotel con "stelle" > a quelle in input, se false il contrario.
+ */
+void ricerca(bst albero, int stelle, bool cerca) //a sx valori > a destra valori <
+{
+	bnode* nodo = bst_search(albero , stelle); //uso questo come albero di partenza.
+	bnode* padre = nodo->parent;
+	if(cerca == true) //stampo i maggiori.
+	{
+		if(nodo->left!=NULL)
+		{
+			stampa_bst(nodo->left); // maggiori diretti del nodo.
+		}
+		if(padre != NULL && (padre->right->key == nodo->key)) //sono a dx (minore del padre e della roba alla sua sx) //CASO RICORSIVO
+		{
+			while(padre!=NULL && (padre->right->key == nodo->key)){
+				cout<<padre->inf.nome << " " << padre->inf.luogo << " " << padre->key;
+				if(padre->left!=NULL)
+				{
+					stampa_bst(padre->left);
+				}
+				nodo = padre;
+				padre = padre->parent;
+			}
+		}
+		//sono a sinistra caso base: non faccio nulla perché non c'è uguale.
+	}
+	else //<=
+	{
+		if(padre!=NULL && padre->left->key == nodo->key)
+		{
+			while(padre!=NULL && padre->left->key == nodo->key) //caso ricorsivo : sono a sx.
+			{
+				//stampo le cose a dx:
+				cout<<padre->inf.nome << " " << padre->inf.luogo << " " << padre->key; 
+				if(padre->right!=NULL)
+				{
+					stampa_bst(padre->right);
+				}
+				nodo = padre;
+				padre = padre->parent;
+			}
+			//sono a dx caso particolare:
+			while(padre!=NULL && padre->key == stelle) //caso = del <=
+			{
+				cout<<padre->inf.nome << " " << padre->inf.luogo << " " << padre->key;
+				padre = padre->parent; 
+			}
+		}
+		//caso base a dx: non faccio niente.
 	}
 }

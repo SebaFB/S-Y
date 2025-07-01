@@ -19,3 +19,4 @@ void copy(tipo_inf& a, tipo_inf b)
     strcpy(a.nome,b.nome);
     a.stelle = b.stelle;
 }
+

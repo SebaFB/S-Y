@@ -22,3 +22,4 @@ typedef struct
 tipo_inf new_hotel(char*, char*, int);
 
 void copy(tipo_inf&, tipo_inf);
+

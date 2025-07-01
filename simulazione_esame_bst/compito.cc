@@ -41,6 +41,22 @@ int main()
         bnode* nodo = bst_newNode(stelle, hotel);
         bst_insert(albero, nodo);
     }
+    cout<<"------------------------------"<<endl;
     stampa_bst(albero);
+    cout<<"-------------------------------"<<endl;
+    //punto 2.a:
+    cout<<"al porcodio"<<endl;
+    bnode* nodo = albero;
+    cout<<"stelle di: "<<nodo->inf.nome<< " : "<< nodo->inf.stelle<<endl;
+    bool cerca;
+    int numero;
+    cout<<"Numero di stelle identificativo: ";
+    cin>>numero;
+    cout<<endl<<"Inserire 1 se cerco i >, 0 se cerco i minori: ";
+    cin>>cerca;
+    cout<<endl;
+    ricerca(albero, numero, cerca);
+    
+
     return 0;
 }

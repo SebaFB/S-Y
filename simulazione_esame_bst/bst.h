@@ -25,7 +25,7 @@ void bst_delete(bst&, bnode*);
 
 void stampa_bst(bst);
 
-
+void ricerca(bst, int, bool);
 
 
 
