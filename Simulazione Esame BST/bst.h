@@ -1,3 +1,7 @@
+/*******************/
+/*HEADER MODULO "bst"*/
+/*******************/
+
 typedef int tipo_key;
 
 struct bnode {

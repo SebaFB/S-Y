@@ -35,7 +35,7 @@ int main()
     fp = fopen("g1.txt", "r");
     i = 0; 
     while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
-        pesca(mano1,val,s);
+        pesca_ordinato(mano1,val,s);
         i++;
     }
     fclose(fp);
@@ -43,7 +43,7 @@ int main()
     fp = fopen("g2.txt", "r"); 
     i = 0; 
     while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
-        pesca(mano2,val,s);
+        pesca_ordinato(mano2,val,s);
         i++; 
     }
     fclose(fp);

@@ -11,7 +11,8 @@
 /* HEADER MODULO "compito" */
 /*******************************/
 
-void pesca(lista&,int,char);
+//void pesca(lista&,int,char);
 void stampa(lista,lista);
 int* tris(lista);
 int cala(lista&);
+void pesca_ordinato(lista&,int,char);

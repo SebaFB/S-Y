@@ -115,7 +115,7 @@ int cala(lista& carte)
        {
             if(tmp->inf.valore == (a+1))
             {
-                //cout <<tmp->inf.valore<< " "<<tmp->inf.seme;
+                cout <<tmp->inf.valore<< " "<<tmp->inf.seme << " ";
                 pross = tmp->pun;
                 carte = delete_elem(carte, tmp);
                 contatore = contatore+1;
@@ -129,5 +129,20 @@ int cala(lista& carte)
        int punteggio = (a+1)*3; //a+1 valore
        delete(terz);
        return punteggio;
+    }
+}
+
+void pesca_ordinato(lista& l, int v, int s){
+    elem* e = NULL;
+    tipo_inf inf; 
+    inf.seme = s;
+    inf.valore = v; 
+    e = new_elem(inf);
+
+    while(l!=NULL){
+        if(l->pun == NULL){
+            l->pun = e; 
+            e->prev = l; 
+        }
     }
 }
