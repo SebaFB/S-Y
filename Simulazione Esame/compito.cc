@@ -17,7 +17,6 @@
 using namespace std; 
 
 #include "liste.h"
-#include "tipo.h"
 
 /**
  * @author {Sebastiano Toni, Matricola: 199678}
@@ -32,27 +31,25 @@ void pesca(lista& l, int v, char s){
     inf.seme = s;
     inf.valore = v; 
     e = new_elem(inf); 
-    e->pun = l; 
-    if(l!=NULL)
-        l->prev = e; 
-    e->prev = NULL;
+    l = insert_elem(l,e); 
 }
 
 /**
  * @author {Sebastiano Toni, Matricola: 199678}
- * Funzione che confronta le mani dei due giocatori 
+ * @brief Funzione che confronta le mani dei due giocatori 
  * @param l1 
  * @param l2 
  */
 void stampa(lista l1, lista l2){
     int ris; 
     while(l1!=NULL && l2!=NULL){
-        if(ris=compare(l1->inf.valore,l2->inf.valore)<0)
-            cout << head(l1) << " maggiore di " << head(l2);
-        else if(ris=compare(l1->inf.valore,l2->inf.valore)>0)
-            cout << head(l1) << " minore di " << head(l2);
-        else   
-            cout << head(l) << " è uguale a " << head(l2); 
+        ris = compare(l1->inf,l2->inf);
+        if(ris<0)
+            cout << l1->inf.valore << " " << l1->inf.seme << " minore di " << l2->inf.valore << " " << l2->inf.seme << endl;
+        else if(ris>0)
+            cout << l1->inf.valore << " " << l1->inf.seme << " maggiore di " << l2->inf.valore << " " << l2->inf.seme << endl;
+        else
+            cout << l1->inf.valore << " " << l1->inf.seme << " è uguale a " << l2->inf.valore << " " << l2->inf.seme << endl; 
         
         l1 = tail(l1); 
         l2 = tail(l2); 

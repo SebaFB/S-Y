@@ -17,27 +17,36 @@
 using namespace std; 
 
 #include "liste.h"
-#include "tipo.h"
 #include "compito.h"
-
-extern "C" char* lettura(FILE* fp){
-    fp = fopen("g1.txt", "r"); 
-
-    long n;
-    n = ftell(fp);
-
-    char s[n]; 
-
-    fgets(s,n,fp);
-    
-    fclose(fp);
-    if(fp==EOF)
-        exit(1);
-    
-    return s; 
-}
 
 int main()
 {
+    FILE* fp; 
+    int nc,i,val;
+    char s;
+    lista mano1 = NULL;
+    lista mano2 = NULL; 
 
+    cout << "Numero di carte per mano (max 12): " << endl; 
+    cin >> nc; 
+    
+    fp = fopen("g1.txt", "r");
+    i = 0; 
+    while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
+        pesca(mano1,val,s);
+        i++;
+    }
+    fclose(fp);
+
+    fp = fopen("g2.txt", "r"); 
+    i = 0; 
+    while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
+        pesca(mano2,val,s);
+        i++; 
+    }
+    fclose(fp);
+
+    stampa(mano1,mano2); 
+
+    return 0; 
 }

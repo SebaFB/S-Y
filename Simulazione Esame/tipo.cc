@@ -18,34 +18,26 @@ using namespace std;
 
 #include "tipo.h"
 
-int compare(tipo_inf s1, tipo_inf s2){//c q f p
-    if(s1.valore > s2.valore)
-        return -1; 
-    if(s1.valore == s2.valore)
-        return 0;
-    if(s1.valore == s2.valore && s1.seme != s2.seme){
-        if(s1.sema == 'C' && s2.seme == 'Q')
-            return -1; 
-        else if(s1.seme == 'Q' && s2.seme == 'F')
-            return -1; 
-        else if(s1.seme == 'F' && s2.seme == 'P')
-            return -1; 
-        else if(s1.seme == 'C' && s2.seme == 'F')
-            return -1; 
-        else if(s1.seme == 'C' && s2.seme == 'P')
-            return -1; 
-        else if(s1.seme == 'Q' && s2.seme == 'P')
+int compare(tipo_inf a,tipo_inf b){
+    if(a.valore < b.valore)
+        return -1;
+    else if((a.valore == b.valore) && (a.seme != b.seme)){
+        if(b.seme == 'C')
             return -1;
-        else
-            return 1;
+        if((b.seme == 'Q' && a.seme=='F' )|| (b.seme == 'Q' && a.seme=='P'))
+            return -1;
+        if(b.seme == 'F' && a.seme == 'P')
+            return -1;
     }
+    if((a.valore == b.valore)&&(a.seme == b.seme))
+        return 0;
+    return 1;
 }
+
 
 void copy(tipo_inf& dest, tipo_inf source){
-    dest = malloc(sizeof(source)); 
-    strcpy(dest,source);
+    dest.seme = source.seme;
+    dest.valore = source.valore;
 }
 
-void print(tipo_inf inf){
-    cout << inf; 
-}
+//void print(tipo_inf inf){}

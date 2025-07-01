@@ -12,7 +12,6 @@
 
 using namespace std ;
 
-#include "tipo.h"
 #include "liste.h"
 
 /*******************************/
@@ -33,8 +32,7 @@ elem* search(lista l, tipo_inf v){
 
 elem* new_elem(tipo_inf inf){
 	    elem* p = new elem ;
-	    copy(p->inf.seme,inf.seme);
-        copy(p->inf.valore,inf.valore);
+	    copy(p->inf,inf);
 	    p->pun=p->prev=NULL;
 		return p;
 }

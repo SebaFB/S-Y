@@ -13,3 +13,4 @@
 
 void pesca(lista&,int,char);
 void stampa(lista,lista);
+int* tris(lista carte);
