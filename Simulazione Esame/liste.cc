@@ -12,7 +12,6 @@
 
 using namespace std ;
 
-#include "tipo.h"
 #include "liste.h"
 
 /*******************************/
@@ -33,8 +32,7 @@ elem* search(lista l, tipo_inf v){
 
 elem* new_elem(tipo_inf inf){
 	    elem* p = new elem ;
-	    copy(p->inf.seme,inf.seme);
-        copy(p->inf.valore,inf.valore);
+	    copy(p->inf,inf);
 	    p->pun=p->prev=NULL;
 		return p;
 }
@@ -53,8 +51,8 @@ lista insert_elem(lista l, elem* e){
 lista delete_elem(lista l, elem* e){
 
 		if(l==e)
-			l=e->pun; // e è la testa della lista
-		else // e non è la testa della lista
+			l=e->pun;
+		else 
 			(e->prev)->pun = e->pun;
 		if(e->pun!=NULL)
 			(e->pun)->prev=e->prev;
