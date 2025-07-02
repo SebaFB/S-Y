@@ -132,7 +132,14 @@ int cala(lista& carte)
     }
 }
 
-void pesca_ordinato(lista& l, int v, int s){
+/**
+ * @author {Sebastiano Toni, Matricola: 199678}
+ * Funzione per pescare le carte in modo ordinato
+ * @param l 
+ * @param v 
+ * @param s 
+ */
+void ord_pesca(lista l, int v, int s){
     elem* e = NULL;
     tipo_inf inf; 
     inf.seme = s;

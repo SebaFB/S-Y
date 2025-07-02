@@ -14,6 +14,8 @@
 #include <iostream>
 #include <cstring>
 
+//#define DEBUG
+
 using namespace std; 
 
 #include "liste.h"
@@ -21,6 +23,7 @@ using namespace std;
 
 int main()
 {
+
     FILE* fp; 
     int nc,i,val,punt;
     int* v1;
@@ -35,7 +38,7 @@ int main()
     fp = fopen("g1.txt", "r");
     i = 0; 
     while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
-        pesca_ordinato(mano1,val,s);
+        ord_pesca(mano1,val,s); 
         i++;
     }
     fclose(fp);
@@ -43,13 +46,14 @@ int main()
     fp = fopen("g2.txt", "r"); 
     i = 0; 
     while((fscanf(fp,"%d %c",&val,&s)==2) && i < nc){
-        pesca_ordinato(mano2,val,s);
+        ord_pesca(mano2,val,s); 
         i++; 
     }
     fclose(fp);
 
     stampa(mano1,mano2); 
 
+#ifdef DEBUG
     cout << "\n\n";
 
     v1= tris(mano1);
@@ -75,5 +79,7 @@ int main()
     punt = cala(mano2); 
 
     cout << "Punteggio mano 2: " << punt;
-    return 0; 
+#endif
+
+    
 }
