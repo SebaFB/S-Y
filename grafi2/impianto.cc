@@ -16,7 +16,7 @@ int compare(tipo_inf a,tipo_inf b)
 }
 void print(tipo_inf a)
 {
-    cout<< a.id << " " << a.tipo << " "<< a.stato <<endl;
+    cout<<endl<< a.id << " " << a.tipo << " "<< a.stato <<endl;
 }
 
 void copy(tipo_inf* a, tipo_inf b)
@@ -25,8 +25,10 @@ void copy(tipo_inf* a, tipo_inf b)
     a->stato = b.stato;
     a->tipo = b.tipo;
     //cout<<"Copia effettuata: "<< a->id << " "<< a->tipo << " "<< a->stato<<endl;
+    /*
     cout<<"Copia effettuata: ";
     print(*a);
+    */
 }
 
 /**
