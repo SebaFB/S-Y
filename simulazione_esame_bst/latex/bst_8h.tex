@@ -1,0 +1,218 @@
+\doxysection{bst.\+h File Reference}
+\hypertarget{bst_8h}{}\label{bst_8h}\index{bst.h@{bst.h}}
+{\ttfamily \#include "{}hotel.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbnode}{bnode}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}
+\item 
+typedef \mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bst_8h_aa12e0383fe08e07401429c7ddfbf3c0c}{bst\+\_\+new\+Node}} (\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}, \mbox{\hyperlink{structtipo__inf}{tipo\+\_\+inf}})
+\item 
+\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}} \mbox{\hyperlink{bst_8h_a20147623f2c6b89269186367132a9cde}{get\+\_\+key}} (\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*})
+\item 
+\mbox{\hyperlink{structtipo__inf}{tipo\+\_\+inf}} \mbox{\hyperlink{bst_8h_a94082fd1cfc1f68abb7915859b6ae04b}{get\+\_\+value}} (\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*})
+\item 
+\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \mbox{\hyperlink{bst_8h_a6a49d2e77127fbd509ad9508d3ba3471}{get\+\_\+left}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}})
+\item 
+\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \mbox{\hyperlink{bst_8h_a68f40cdc37c9735eeefd5715479b7f79}{get\+\_\+right}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}})
+\item 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bst_8h_aae81f7032dbb2b4ff43e32e02a778e8b}{get\+\_\+parent}} (\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}n)
+\item 
+void \mbox{\hyperlink{bst_8h_acf36ff27901ecb91f142d965aba5ba86}{bst\+\_\+insert}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \&, \mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{bst_8h_a750f8c8fa77665ff0e7648300285f477}{print\+\_\+key}} (\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}})
+\item 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bst_8h_a7d01a5ca46273f3b433e25773b3cce57}{bst\+\_\+search}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}, \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}})
+\item 
+void \mbox{\hyperlink{bst_8h_acc6ea038d88b5874d0b630f5e180319a}{bst\+\_\+delete}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \&, \mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{bst_8h_a6d7831e08c64a36340abe10c85090cfc}{stampa\+\_\+bst}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}})
+\begin{DoxyCompactList}\small\item\em stampa in ordine decrescente i nodi nell\textquotesingle{}albero. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bst_8h_aceba5de28d096e363337ea8be21953d9}{ricerca}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}, int, bool)
+\begin{DoxyCompactList}\small\item\em stampa gli hotel \texorpdfstring{$>$}{>} o \texorpdfstring{$<$}{<}= al numero di stelle inserito in base al parametro cerca. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bst_8h_a54ab6659b42b04dcb5d3a24aefaa6097}{dfs\+\_\+mod}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}, int, char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em dfs modificata che permette di contare il numero di elementi ricercati \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{bst_8h_aebdd07205b75b9bbb5a6edcb39edf40e}{media}} (\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}, int, char \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em si avvale di una versione modificata della dfs per contare il numero di hotel che rispetta i requisiti \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{bst_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}\index{bst.h@{bst.h}!bst@{bst}}
+\index{bst@{bst}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{bst}{bst}}
+{\footnotesize\ttfamily \label{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d} 
+typedef \mbox{\hyperlink{structbnode}{bnode}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}
+
+\Hypertarget{bst_8h_af2c7e22e41817066e17751be91d632dd}\index{bst.h@{bst.h}!tipo\_key@{tipo\_key}}
+\index{tipo\_key@{tipo\_key}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{tipo\_key}{tipo\_key}}
+{\footnotesize\ttfamily \label{bst_8h_af2c7e22e41817066e17751be91d632dd} 
+typedef int \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{bst_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{bst_8h_acc6ea038d88b5874d0b630f5e180319a}\index{bst.h@{bst.h}!bst\_delete@{bst\_delete}}
+\index{bst\_delete@{bst\_delete}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{bst\_delete()}{bst\_delete()}}
+{\footnotesize\ttfamily \label{bst_8h_acc6ea038d88b5874d0b630f5e180319a} 
+void bst\+\_\+delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \&}]{b}{, }\item[{\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_acf36ff27901ecb91f142d965aba5ba86}\index{bst.h@{bst.h}!bst\_insert@{bst\_insert}}
+\index{bst\_insert@{bst\_insert}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{bst\_insert()}{bst\_insert()}}
+{\footnotesize\ttfamily \label{bst_8h_acf36ff27901ecb91f142d965aba5ba86} 
+void bst\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} \&}]{b}{, }\item[{\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_aa12e0383fe08e07401429c7ddfbf3c0c}\index{bst.h@{bst.h}!bst\_newNode@{bst\_newNode}}
+\index{bst\_newNode@{bst\_newNode}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{bst\_newNode()}{bst\_newNode()}}
+{\footnotesize\ttfamily \label{bst_8h_aa12e0383fe08e07401429c7ddfbf3c0c} 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} bst\+\_\+new\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}}]{k}{, }\item[{\mbox{\hyperlink{structtipo__inf}{tipo\+\_\+inf}}}]{i}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_a7d01a5ca46273f3b433e25773b3cce57}\index{bst.h@{bst.h}!bst\_search@{bst\_search}}
+\index{bst\_search@{bst\_search}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{bst\_search()}{bst\_search()}}
+{\footnotesize\ttfamily \label{bst_8h_a7d01a5ca46273f3b433e25773b3cce57} 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} bst\+\_\+search (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{b}{, }\item[{\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}}]{k}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_a54ab6659b42b04dcb5d3a24aefaa6097}\index{bst.h@{bst.h}!dfs\_mod@{dfs\_mod}}
+\index{dfs\_mod@{dfs\_mod}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{dfs\_mod()}{dfs\_mod()}}
+{\footnotesize\ttfamily \label{bst_8h_a54ab6659b42b04dcb5d3a24aefaa6097} 
+int dfs\+\_\+mod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{albero}{, }\item[{int}]{soglia}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{luogo}{}\end{DoxyParamCaption})}
+
+
+
+dfs modificata che permette di contare il numero di elementi ricercati 
+
+\begin{DoxyAuthor}{Author}
+\{Youssef Chiesi, Matricola\} 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em albero} & \\
+\hline
+{\em soglia} & numero di stelle -\/1 necessarie come filtro. \\
+\hline
+{\em luogo} & luogo filtro per la ricerca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int numero di elementi che corrisponde ai filtri 
+\end{DoxyReturn}
+\Hypertarget{bst_8h_a20147623f2c6b89269186367132a9cde}\index{bst.h@{bst.h}!get\_key@{get\_key}}
+\index{get\_key@{get\_key}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{get\_key()}{get\_key()}}
+{\footnotesize\ttfamily \label{bst_8h_a20147623f2c6b89269186367132a9cde} 
+\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}} get\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_a6a49d2e77127fbd509ad9508d3ba3471}\index{bst.h@{bst.h}!get\_left@{get\_left}}
+\index{get\_left@{get\_left}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{get\_left()}{get\_left()}}
+{\footnotesize\ttfamily \label{bst_8h_a6a49d2e77127fbd509ad9508d3ba3471} 
+\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} get\+\_\+left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{t}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_aae81f7032dbb2b4ff43e32e02a778e8b}\index{bst.h@{bst.h}!get\_parent@{get\_parent}}
+\index{get\_parent@{get\_parent}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{get\_parent()}{get\_parent()}}
+{\footnotesize\ttfamily \label{bst_8h_aae81f7032dbb2b4ff43e32e02a778e8b} 
+\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*} get\+\_\+parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_a68f40cdc37c9735eeefd5715479b7f79}\index{bst.h@{bst.h}!get\_right@{get\_right}}
+\index{get\_right@{get\_right}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{get\_right()}{get\_right()}}
+{\footnotesize\ttfamily \label{bst_8h_a68f40cdc37c9735eeefd5715479b7f79} 
+\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}} get\+\_\+right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{t}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_a94082fd1cfc1f68abb7915859b6ae04b}\index{bst.h@{bst.h}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily \label{bst_8h_a94082fd1cfc1f68abb7915859b6ae04b} 
+\mbox{\hyperlink{structtipo__inf}{tipo\+\_\+inf}} get\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbnode}{bnode}} \texorpdfstring{$\ast$}{*}}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_aebdd07205b75b9bbb5a6edcb39edf40e}\index{bst.h@{bst.h}!media@{media}}
+\index{media@{media}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{media()}{media()}}
+{\footnotesize\ttfamily \label{bst_8h_aebdd07205b75b9bbb5a6edcb39edf40e} 
+int media (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{albero}{, }\item[{int}]{stelle}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{luogo}{}\end{DoxyParamCaption})}
+
+
+
+si avvale di una versione modificata della dfs per contare il numero di hotel che rispetta i requisiti 
+
+\begin{DoxyAuthor}{Author}
+\{Youssef Chiesi, Matricola\} 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em albero} & \\
+\hline
+{\em stelle} & numero di stelle -\/1 necessarie come filtro. \\
+\hline
+{\em luogo} & luogo filtro per la ricerca \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int numero di elementi che corrisponde ai filtri 
+\end{DoxyReturn}
+\Hypertarget{bst_8h_a750f8c8fa77665ff0e7648300285f477}\index{bst.h@{bst.h}!print\_key@{print\_key}}
+\index{print\_key@{print\_key}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{print\_key()}{print\_key()}}
+{\footnotesize\ttfamily \label{bst_8h_a750f8c8fa77665ff0e7648300285f477} 
+void print\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\+\_\+key}}}]{k}{}\end{DoxyParamCaption})}
+
+\Hypertarget{bst_8h_aceba5de28d096e363337ea8be21953d9}\index{bst.h@{bst.h}!ricerca@{ricerca}}
+\index{ricerca@{ricerca}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{ricerca()}{ricerca()}}
+{\footnotesize\ttfamily \label{bst_8h_aceba5de28d096e363337ea8be21953d9} 
+void ricerca (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{albero}{, }\item[{int}]{stelle}{, }\item[{bool}]{cerca}{}\end{DoxyParamCaption})}
+
+
+
+stampa gli hotel \texorpdfstring{$>$}{>} o \texorpdfstring{$<$}{<}= al numero di stelle inserito in base al parametro cerca. 
+
+\begin{DoxyAuthor}{Author}
+\{Youssef Chiesi, Matricola\} 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em albero} & \\
+\hline
+{\em stelle} & identificativo stelle per stampare. \\
+\hline
+{\em cerca} & se true stampa hotel con "{}stelle"{} \texorpdfstring{$>$}{>} a quelle in input, se false il contrario. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{bst_8h_a6d7831e08c64a36340abe10c85090cfc}\index{bst.h@{bst.h}!stampa\_bst@{stampa\_bst}}
+\index{stampa\_bst@{stampa\_bst}!bst.h@{bst.h}}
+\doxysubsubsection{\texorpdfstring{stampa\_bst()}{stampa\_bst()}}
+{\footnotesize\ttfamily \label{bst_8h_a6d7831e08c64a36340abe10c85090cfc} 
+void stampa\+\_\+bst (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}}]{albero}{}\end{DoxyParamCaption})}
+
+
+
+stampa in ordine decrescente i nodi nell\textquotesingle{}albero. 
+
+\begin{DoxyAuthor}{Author}
+\{Youssef Chiesi, Matricola\} 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em albero} & \\
+\hline
+\end{DoxyParams}

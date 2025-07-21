@@ -1,0 +1,39 @@
+\doxysection{bst.\+h}
+\hypertarget{bst_8h_source}{}\label{bst_8h_source}\mbox{\hyperlink{bst_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hotel_8h}{hotel.h}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}};}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structbnode}{bnode}}\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}}\ \mbox{\hyperlink{structbnode_a359b6bc2998182d134f255e872a5d66b}{key}};}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{structtipo__inf}{tipo\_inf}}\ \mbox{\hyperlink{structbnode_aec462e942a87454d03b9912b184912bd}{inf}};}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{structbnode_ab77995e472d092c87a91b201e1fdeb89}{left}};}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{structbnode_aeb96b50e389e2ca6c4a807bd4059d3bd}{right}};}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{structbnode_aa419335e7eb211c30f4517799ffcd306}{parent}};}
+\DoxyCodeLine{00010\ \ \ \ \ \};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{bst_8h_aa12e0383fe08e07401429c7ddfbf3c0c}{bst\_newNode}}(\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}},\ \mbox{\hyperlink{structtipo__inf}{tipo\_inf}});}
+\DoxyCodeLine{00016\ \mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}}\ \mbox{\hyperlink{bst_8h_a20147623f2c6b89269186367132a9cde}{get\_key}}(\mbox{\hyperlink{structbnode}{bnode}}*);}
+\DoxyCodeLine{00017\ \mbox{\hyperlink{structtipo__inf}{tipo\_inf}}\ \mbox{\hyperlink{bst_8h_a94082fd1cfc1f68abb7915859b6ae04b}{get\_value}}(\mbox{\hyperlink{structbnode}{bnode}}*);\ \ \textcolor{comment}{//restituisce\ il\ valore\ del\ nodo\ in\ ingresso}}
+\DoxyCodeLine{00018\ \mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}\ \mbox{\hyperlink{bst_8h_a6a49d2e77127fbd509ad9508d3ba3471}{get\_left}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}});\ \textcolor{comment}{//restituisce\ il\ sottoalbero\ sinistro\ dell’albero\ in\ ingresso}}
+\DoxyCodeLine{00019\ \mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}\ \mbox{\hyperlink{bst_8h_a68f40cdc37c9735eeefd5715479b7f79}{get\_right}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}});\ \textcolor{comment}{//restituisce\ il\ sottoalbero\ destro\ dell’albero\ in\ ingresso}}
+\DoxyCodeLine{00020\ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{bst_8h_aae81f7032dbb2b4ff43e32e02a778e8b}{get\_parent}}(\mbox{\hyperlink{structbnode}{bnode}}*\ n);\ \textcolor{comment}{//\ restituisce\ il\ padre\ dell’albero\ in\ ingresso}}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bst_8h_acf36ff27901ecb91f142d965aba5ba86}{bst\_insert}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}\&,\mbox{\hyperlink{structbnode}{bnode}}*)\ ;\ \textcolor{comment}{//aggiunge\ un\ nodo\ al\ bst}}
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bst_8h_a750f8c8fa77665ff0e7648300285f477}{print\_key}}(\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}});}
+\DoxyCodeLine{00023\ \mbox{\hyperlink{structbnode}{bnode}}*\ \mbox{\hyperlink{bst_8h_a7d01a5ca46273f3b433e25773b3cce57}{bst\_search}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}},\mbox{\hyperlink{bst_8h_af2c7e22e41817066e17751be91d632dd}{tipo\_key}});}
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bst_8h_acc6ea038d88b5874d0b630f5e180319a}{bst\_delete}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}}\&,\ \mbox{\hyperlink{structbnode}{bnode}}*);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bst_8h_a6d7831e08c64a36340abe10c85090cfc}{stampa\_bst}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}});}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{bst_8h_aceba5de28d096e363337ea8be21953d9}{ricerca}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{bst_8h_a54ab6659b42b04dcb5d3a24aefaa6097}{dfs\_mod}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{bst_8h_aebdd07205b75b9bbb5a6edcb39edf40e}{media}}(\mbox{\hyperlink{bst_8h_aee0f3ff666c3dce88adf97f1d26ee07d}{bst}},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

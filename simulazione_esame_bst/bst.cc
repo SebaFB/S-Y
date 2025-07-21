@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+/**
+ * @file bst.cc
+ * @brief Implementazione delle funzioni per l'albero binario di ricerca
+ */
 
 #include <cstring>
 

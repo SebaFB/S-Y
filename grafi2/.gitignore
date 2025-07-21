@@ -1,0 +1,14 @@
+*.json
+*.exe
+*.o
+*Doxyfile
+*.code-workspace
+*.png
+*.html
+*.svg
+*.js
+*.css
+*.txt
+*.tex
+*.sty
+*.bat
