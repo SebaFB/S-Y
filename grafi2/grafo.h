@@ -31,4 +31,5 @@ adj_list get_nextadj(adj_list);
 adj_node new_node(int, tipo_inf);
 void stampa(graph*, tipo_inf*);
 
+void operativitaDegrata(graph* , tipo_inf* , int);
 #endif /* GRAFI_H_ */

@@ -60,7 +60,16 @@ int main()
     graph* punt = &g;
     //cout<<"ciao"<<endl;
     stampa(punt, array);
-    
+    cout<<"----------------------"<<endl;
+
+    int m = -10;
+    while(m<1)
+    {
+        cout<<"Inserire ID macchinario: ";
+        cin>> m;
+        cout<< endl;
+        operativitaDegrata(punt, array, m);
+    }
     return 0;
     
 }

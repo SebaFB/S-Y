@@ -153,3 +153,19 @@ void stampa(graph* g, tipo_inf* array)
 		}
 	}
 }
+
+
+void operativitaDegrata(graph* g , tipo_inf* array, int m)
+{
+	//Cerco m in G.nodes
+	adj_list l = g->nodes[m-1]; //è 0 based mentre gli indici sono 1 based.
+	cout<<"MACCHINARI INFLUENZATI: "<<endl;
+	while(l->next!=NULL)
+	{
+		if(l->elem.tipo == 'D') //tutti i macchinari in g.nodes[m-1].
+		{
+			print(l->elem);
+		}
+		l = l->next;
+	}
+}
